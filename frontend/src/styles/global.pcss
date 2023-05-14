@@ -1,0 +1,54 @@
+@import "_fonts.pcss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--containerMaxWidth);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  margin: 80px 0;
+
+  &__value {
+    font-family: "Proxima Nova", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 64px;
+    color: #25262b;
+  }
+}
+
+.btn {
+  border: none;
+  background-color: var(--colorDenim);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #4f86cf;
+  }
+
+  &:disabled {
+    background-color: var(--colorHeather);
+    cursor: default;
+
+    &:hover {
+      background-color: var(--colorHeather);
+    }
+  }
+}

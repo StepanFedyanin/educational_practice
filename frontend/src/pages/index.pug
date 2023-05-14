@@ -1,0 +1,84 @@
+extends ./page_structure
+include ./UI
+block subtitle_basic
+    .title
+        .title__container
+            .container
+                h1.title__value Практическое обучение. Базовая часть
+block rangeSlider
+    .rangeSlider
+        .container
+            h2.rangeSlider__title Бегунок
+            .rangeSlider__inner(class="rangeSlider__inner" id='rangeSlider')
+block slider
+    .slider
+        div(class="slider__inner container")
+            h2.slider__title Слайдер
+            .slider__content
+                div(class="mySwiper slider__container" id='swiper')
+                    div(class="slider__wrapper swiper-wrapper")
+                        div(class="swiper-slide")
+                            img(src='./images/slider_image.jpg' alt='slide image')
+                        div(class="swiper-slide")
+                            img(src='./images/slider_image2.jpg' alt='slide image')
+                        div(class="swiper-slide")
+                            img(src='./images/slider_image3.jpg' alt='slide image')
+                .slider__description
+                    .slider__info
+                        .slider__info--item
+                            p(class='slider__info--text') Выбранный слайд:
+                                span(id="slider_select")
+                        .slider__info--item
+                            p(class='slider__info--text') Всего слайдов:
+                                span(id="slider_length")
+                    .slider__info--tools
+                        .slider__tools--item
+                            button(class="slider__btn btn arrow_prev")
+                                img(src="./images/arroy_pref.svg")
+                        .slider__tools--item
+                            button(class="slider__btn btn arrow_next")
+                                img(src="./images/arroy_next.svg")
+block yandexMap
+    .yandexMap
+        .container
+            h2.yandexMap__title Карта
+            .yandexMap__inner(id="yandexMap" data-params={center:"55.168943, 61.400083", points:[{coords:"55.132150, 61.451422",url:"./images/UserIcon.svg",url_active:"./images/UserIconFill.svg"},{coords:"55.195020, 61.334515",url:"./images/WorkIcon.svg",url_active:"./images/WorkIconFill.svg"},{coords:"55.175478, 61.395141",url:"./images/homeIcon.svg",url_active:"./images/homeIconFill.svg"}]})
+block subtitle_advanced
+    .title
+        .title__container
+            .container
+                h1.title__value Практическое обучение. Продвинутая часть
+block poput
+    div(class="poput" data-popup="")
+        .container
+            h2.poput__title Кнопка с модальным окном
+            .poput__container
+                button(class="btn poput__btn" id="popup__btn" data-src='#modal') Открыть попап
+                .modal#modal
+                    h1.modal__title Поп-ап
+                    .modal__content
+                        p.modal__subtitle Выбранные значения:
+                        p.modal__item Минимум:
+                            span.modal__params.modal__params--price#modalMinRange
+                        p.modal__item Максимум:
+                            span.modal__params.modal__params--price#modalMaxRange
+                    .modal__content
+                        p.modal__subtitle Выбранная метка:
+                        p.modal__item Координаты:
+                            span.modal__params#modalPoint
+block form
+    .form
+        .container
+            h2.form__title Форма
+            form.form__container#formContainer
+                div(class='form__item form__tel')
+                    +inputText('Ваш телефон', '+7 ( _ _ _ ) _ _ _ - _ _ - _ _', 'form__tel', 'phone','formElement__required')
+                div(class='form__item form__name')
+                    +inputText('Ваша фамилия', 'Ваша фамилия', 'form__name', 'name')
+                +textarea('Комментарий ','Комментарий', 'form__message', 'message')
+                .form__sending
+                    +checkBox('Согласен на обработку ','персональных данных', '#', 'formAgreement')
+                    button(class='btn form__submit' id='submitForm' type='submit') Отправить форму
+                .massage#formMessage
+                        .massage__title Сообщение
+                        p.massage__text#formMessageText

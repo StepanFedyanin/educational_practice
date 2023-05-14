@@ -1,0 +1,85 @@
+.slider {
+  margin: 80px 0;
+
+  &__title {
+    font-family: "Proxima Nova", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    color: var(--colorShark);
+    margin-bottom: 50px;
+  }
+
+  &__container {
+    width: 615px;
+    overflow: hidden;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    gap: 137px;
+  }
+
+  &__description {
+    margin-bottom: 5px;
+  }
+
+  &__info {
+    margin-bottom: 124px;
+
+    &--item {
+      margin-bottom: 12px;
+    }
+
+    &--text {
+      font-family: "Proxima Nova", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      color: var(--colorShark);
+
+      span {
+        font-family: "Proxima Nova", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        color: var(--colorDenim);
+        padding-left: 8px;
+      }
+    }
+
+    &--tools {
+      display: flex;
+      gap: 16px;
+    }
+  }
+
+  &__btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--colorDenim);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #4f86cf;
+    }
+
+    &:disabled {
+      background-color: var(--colorHeather);
+      cursor: default;
+
+      &:hover {
+        background-color: var(--colorHeather);
+      }
+    }
+  }
+}

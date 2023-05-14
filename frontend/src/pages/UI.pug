@@ -1,0 +1,23 @@
+mixin inputText(labelValue, placeholderValue, groupValue , dataForm, required)
+    .formElement
+        label.formElement__label(class=required for=groupValue)=labelValue
+        .formElement__content
+            input.formElement__elem(data-form=dataForm id=groupValue placeholder=placeholderValue)
+            .formElement__error
+                p.formElement__message#errorMessage
+                img(src='../images/errorIcon.svg')
+
+mixin textarea(labelValue, placeholderValue, groupValue, dataForm)
+    .formElement
+        label.formElement__label.formElement__required(for=groupValue)=labelValue
+        .formElement__content
+            textarea.formElement__elem(class='formElement__textarea' data-form=dataForm id=groupValue placeholder=placeholderValue)
+            .formElement__error
+                p.formElement__message#errorMessage
+                img(src='../images/errorIcon.svg')
+
+mixin checkBox(valueSpan, valueLink, hrefValue, groupValue , dataForm)
+    .checkBox
+        input(class='checkBox__input' data-form='agreement' type='checkbox' id=groupValue)
+        label(class='checkBox__label' for=groupValue)=valueSpan
+            a(href=hrefValue)=valueLink
